@@ -1,6 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
-import { Subject } from './Subject';
+import { Subject } from './subject';
 
 @Controller()
 export class AppController {
@@ -11,8 +11,8 @@ export class AppController {
     return this.appService.getAllSubjects();
   }
 
-  @Get("api/subject/:id")
-  getSubject(id: string): Subject {
+  @Get("/api/subjects/:id")
+  getSubject(@Param('id') id: string): Subject {
     return this.appService.getSubject(id);
   }
 }

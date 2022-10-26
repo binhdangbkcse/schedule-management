@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import {Subject} from './Subject';
+import {Subject} from './subject';
 @Injectable()
 export class AppService {
   subject1 = new Subject("CO0000", "Mobile", "H1-101", "2g chiều");
